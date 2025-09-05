@@ -18,6 +18,7 @@ public class AdvertisementService : IAdvertisementService
         {
             Title = "Добро пожаловать!",
             Content = "Привет! Рады видеть тебя снова.",
+            CreatedAt = DateTime.UtcNow,
             UserId = userId
         },
 
@@ -25,6 +26,7 @@ public class AdvertisementService : IAdvertisementService
         {
             Title = "Специальное предложение",
             Content = "Получите 10% скидку на первый заказ!",
+            CreatedAt = DateTime.UtcNow,
             UserId = userId
         },
 
@@ -32,6 +34,7 @@ public class AdvertisementService : IAdvertisementService
         {
             Title = "Новинки",
             Content = "Ознакомьтесь с новыми товарами в нашем каталоге.",
+            CreatedAt = DateTime.UtcNow,
             UserId = userId
         }
     ];

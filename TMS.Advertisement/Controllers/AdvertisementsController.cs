@@ -25,19 +25,7 @@ public class AdvertisementsController : ControllerBase
     [HttpGet("user/{userId:guid}")]
     public async Task<ActionResult<List<Domain.Models.Advertisement>>> GetAdvertisementsByUserId(Guid userId)
     {
-        var advertisements = _getAdvertisementsByUserIdUseCase.ExecuteAsync(userId, CancellationToken.None);
-
+        var advertisements = await _getAdvertisementsByUserIdUseCase.ExecuteAsync(userId, CancellationToken.None);
         return Ok(advertisements);
-    }
-    
-    [HttpGet("{id:guid}")]
-    public async Task<ActionResult<Domain.Models.Advertisement>> GetAdvertisement(Guid id)
-    {
-        var advertisement = await _context.Advertisements.FindAsync(id);
-            
-        if (advertisement == null)
-            return NotFound();
-
-        return Ok(advertisement);
     }
 }
