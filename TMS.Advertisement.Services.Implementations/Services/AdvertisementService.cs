@@ -12,30 +12,29 @@ public class AdvertisementService : IAdvertisementService
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
 
-    public List<Domain.Models.Advertisement> GenerateNewsForUser(Guid userId)
-    {
-        return new List<Domain.Models.Advertisement>
+    public async Task<List<Domain.Models.Advertisement>> GenerateNewsForUser(Guid userId) =>
+    [
+        new()
         {
-            new()
-            {
-                Title = "Добро пожаловать!",
-                Content = "Привет! Рады видеть тебя снова.",
-                UserId = userId
-            },
-            new()
-            {
-                Title = "Специальное предложение",
-                Content = "Получите 10% скидку на первый заказ!",
-                UserId = userId
-            },
-            new()
-            {
-                Title = "Новинки",
-                Content = "Ознакомьтесь с новыми товарами в нашем каталоге.",
-                UserId = userId
-            }
-        };
-    }
+            Title = "Добро пожаловать!",
+            Content = "Привет! Рады видеть тебя снова.",
+            UserId = userId
+        },
+
+        new()
+        {
+            Title = "Специальное предложение",
+            Content = "Получите 10% скидку на первый заказ!",
+            UserId = userId
+        },
+
+        new()
+        {
+            Title = "Новинки",
+            Content = "Ознакомьтесь с новыми товарами в нашем каталоге.",
+            UserId = userId
+        }
+    ];
 
     public async Task SaveNewsAsync(List<Domain.Models.Advertisement> newsItems)
     {

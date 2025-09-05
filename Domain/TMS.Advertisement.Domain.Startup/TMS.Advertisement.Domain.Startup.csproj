@@ -11,9 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Domain\TMS.Advertisement.Domain.Startup\TMS.Advertisement.Domain.Startup.csproj" />
-      <ProjectReference Include="..\TMS.Advertisement.DataAccess\TMS.Advertisement.DataAccess.csproj" />
-      <ProjectReference Include="..\TMS.Advertisement.Infrastructure.Startup\TMS.Advertisement.Infrastructure.Startup.csproj" />
+      <ProjectReference Include="..\TMS.Advertisement.Domain.UseCases\TMS.Advertisement.Domain.UseCases.csproj" />
     </ItemGroup>
 
 </Project>
