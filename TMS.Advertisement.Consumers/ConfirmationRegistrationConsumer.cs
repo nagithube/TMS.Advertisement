@@ -21,7 +21,8 @@ public class ConfirmationRegistrationConsumer : IConsumer<UserLoggedInEvent>
     {
         if (context.Message.UserId == null)
             return;
-        
-        await _advertisementService.GenerateNewsForUser(context.Message.UserId);
+
+        var advertisements = await _advertisementService.GenerateNewsForUser(context.Message.UserId);
+        await _advertisementService.SaveNewsAsync(advertisements);
     }
 }
